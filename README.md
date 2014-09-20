@@ -11,4 +11,4 @@ Javascript porting of curses library using Emscripten
 * [XMas](http://mad4j.github.io/curses.js/xmas.html)
 
 ## References
-* [PDCurses.js](https://github.com/coolwanglu/PDCurses.js) @coolwnglu
+* [PDCurses.js](https://github.com/coolwanglu/PDCurses.js)
