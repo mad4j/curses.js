@@ -33,7 +33,7 @@ ECHO BUILDING sdl1\
 ECHO ---------------
 FOR /R %%I IN (pdcurses34\sdl1\*.c) DO (
 	ECHO Building %%~nI%%~xI
-	CMD /C emcc -O2 pdcurses34\sdl1\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\
+	CMD /C emcc -O2 pdcurses34\sdl1\%%~nI%%~xI -o out\%%~nI.bc -I .\ -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\
 	SET "PDCURSES_BINARIES=!PDCURSES_BINARIES! out\%%~nI.bc"
 )
 
