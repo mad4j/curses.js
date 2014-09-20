@@ -16,3 +16,4 @@ Javascript porting of curses library using Emscripten
 ## References
 * [PDCurses.js](https://github.com/coolwanglu/PDCurses.js)
 * [PDCurses](http://pdcurses.sourceforge.net/)
+* [Emscripten](https://github.com/kripken/emscripten/wiki)
