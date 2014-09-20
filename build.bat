@@ -40,7 +40,7 @@ FOR /R %%I IN (pdcurses34\sdl1\*.c) DO (
 ECHO.
 ECHO Building library using...
 ECHO %PDCURSES_BINARIES%
-CMD /C emcc -O2 %PDCURSES_BINARIES% -o lib\pdcurses.o
+CMD /C emcc -O2 %PDCURSES_BINARIES% -o lib\libcurses.o
 
 ECHO.
 ECHO BUILDING demos\
@@ -49,7 +49,7 @@ FOR /R %%I IN (pdcurses34\demos\*.c) DO (
 	ECHO Building %%~nI%%~xI
 	CMD /C emcc -O2 pdcurses34\demos\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\ -I pdcurses34\demos\
 	CD bin/
-	CMD /C emcc -s ASYNCIFY=1 --emrun -O2 ..\lib\pdcurses.o ..\out\%%~nI.bc -o %%~nI.html --preload-file pdcfont.bmp --preload-file pdcicon.bmp
+	CMD /C emcc -s ASYNCIFY=1 --emrun -O2 ..\lib\libcurses.o ..\out\%%~nI.bc -o %%~nI.html --preload-file pdcfont.bmp --preload-file pdcicon.bmp
 	CD ..
 )	
 
