@@ -5,6 +5,7 @@
 RCSID("$Id: pdcclip.c,v 1.6 2008/07/14 04:24:52 wmcbrine Exp $")
 
 #include <stdlib.h>
+#include <string.h>
 
 /*man-start**************************************************************
 

@@ -1,6 +1,7 @@
 /* Public Domain Curses */
 
 #include "pdcsdl.h"
+#include <stdlib.h>
 
 RCSID("$Id: pdckbd.c,v 1.20 2008/07/14 04:24:52 wmcbrine Exp $")
 
