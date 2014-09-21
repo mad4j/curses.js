@@ -6,6 +6,9 @@
 
 #include <SDL/SDL.h>
 
+//emscripten support
+#define SDL_DisplayFormat SDL_DisplayFormatAlpha
+
 PDCEX SDL_Surface *pdc_screen, *pdc_font, *pdc_icon, *pdc_back;
 PDCEX int pdc_sheight, pdc_swidth, pdc_yoffset, pdc_xoffset;
 
