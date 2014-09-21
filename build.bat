@@ -1,8 +1,9 @@
 @ECHO OFF
-
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 CLS
+
+ECHO Building curses.js
 
 ECHO Removing folders
 RD /Q /S out\
