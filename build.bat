@@ -9,14 +9,19 @@ ECHO Removing folders
 RD /Q /S out\
 MD out\
 
-RD /Q /S lib\
-MD lib\
+RD /Q /S dist\
+MD dist\
 
-RD /Q /S bin\
-MD bin\
+RD /Q /S demos\
+MD demos\
 
-ECHO Copy BMP files in bin\
-COPY *.bmp bin\
+ECHO Copy BMP files in demos\ folder
+COPY *.bmp demos\
+
+ECHO Copy files in dist\ folder
+COPY *.bmp dist\ 
+COPY pdcurses34\curses.h dist\
+COPY pdcurses34\term.h dist\
 
 ECHO.
 ECHO BUILDING pdcurses\
@@ -41,7 +46,7 @@ FOR /R %%I IN (pdcurses34\sdl1\*.c) DO (
 ECHO.
 ECHO Building library using...
 ECHO %PDCURSES_BINARIES%
-CMD /C emcc -O2 %PDCURSES_BINARIES% -o lib\libcurses.o
+CMD /C emcc -O2 %PDCURSES_BINARIES% -o dist\libcurses.o
 
 ECHO.
 ECHO BUILDING demos\
@@ -49,8 +54,8 @@ ECHO ---------------
 FOR /R %%I IN (pdcurses34\demos\*.c) DO (
 	ECHO Building %%~nI%%~xI
 	CMD /C emcc -O2 pdcurses34\demos\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\ -I pdcurses34\demos\
-	CD bin/
-	CMD /C emcc -s ASYNCIFY=1 --emrun -O2 ..\lib\libcurses.o ..\out\%%~nI.bc -o %%~nI.html --preload-file pdcfont.bmp --preload-file pdcicon.bmp
+	CD demos/
+	CMD /C emcc -s ASYNCIFY=1 --emrun -O2 ..\dist\libcurses.o ..\out\%%~nI.bc -o %%~nI.html --preload-file pdcfont.bmp --preload-file pdcicon.bmp
 	CD ..
 )	
 
