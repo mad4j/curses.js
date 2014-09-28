@@ -8,6 +8,7 @@ Javascript porting of curses library using Emscripten
 
 ## Demos
 
+* [HelloWorld](http://mad4j.github.io/curses.js/hellow.html)
 * [Fireworks](http://mad4j.github.io/curses.js/firework.html)
 * [Rain](http://mad4j.github.io/curses.js/rain.html)
 * [Worm](http://mad4j.github.io/curses.js/worm.html)
