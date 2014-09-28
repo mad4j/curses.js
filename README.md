@@ -12,6 +12,7 @@ Javascript porting of curses library using Emscripten
 * [Rain](http://mad4j.github.io/curses.js/rain.html)
 * [Worm](http://mad4j.github.io/curses.js/worm.html)
 * [XMas](http://mad4j.github.io/curses.js/xmas.html)
+* [NCColour](http://mad4j.github.io/curses.js/nccolour.html) written by Yoran Heling <projects@yorhel.nl>
 
 ## References
 * [PDCurses.js](https://github.com/coolwanglu/PDCurses.js)
