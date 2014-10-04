@@ -1,10 +1,13 @@
-curses.js
+Curses.js
 =========
 
 Javascript porting of curses library using Emscripten
 
 ## Releases
 * [Last Stable](https://github.com/mad4j/curses.js/releases)
+
+## Projects using Curses.js
+* [Greed.js](https://github.com/mad4j/greed.js)
 
 ## Demos
 
