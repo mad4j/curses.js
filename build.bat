@@ -4,6 +4,8 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 CLS
 
 ECHO Building curses.js
+ECHO using...
+CMD /C emcc --version
 
 ECHO Removing folders
 RD /Q /S out\
@@ -19,7 +21,7 @@ ECHO Copy BMP files in demos\ folder
 COPY *.bmp demos\
 
 ECHO Copy files in dist\ folder
-COPY *.bmp dist\ 
+COPY *.bmp dist\
 COPY pdcurses34\curses.h dist\
 COPY pdcurses34\term.h dist\
 
@@ -32,7 +34,7 @@ FOR /R %%I IN (pdcurses34\pdcurses\*.c) DO (
 	ECHO Building %%~nI%%~xI
 	CMD /C emcc -Oz pdcurses34\pdcurses\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\
 	SET "PDCURSES_BINARIES=!PDCURSES_BINARIES! out\%%~nI.bc"
-)	
+)
 
 ECHO.
 ECHO BUILDING sdl1\
@@ -53,10 +55,14 @@ ECHO BUILDING demos\
 ECHO ---------------
 FOR /R %%I IN (pdcurses34\demos\*.c) DO (
 	ECHO Building %%~nI%%~xI
-	CMD /C emcc -Oz pdcurses34\demos\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\ -I pdcurses34\demos\
+	IF "%%~nI" == "tuidemo" (
+		CMD /C emcc -Oz out\tui.bc pdcurses34\demos\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\ -I pdcurses34\demos\
+	) ELSE (
+		CMD /C emcc -Oz pdcurses34\demos\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\ -I pdcurses34\demos\
+	)
 	CD demos/
 	CMD /C emcc -s ASYNCIFY=1 --emrun -O3 ..\dist\libcurses.o ..\out\%%~nI.bc -o %%~nI.html --preload-file pdcfont.bmp --preload-file pdcicon.bmp --shell-file ../template.html
 	CD ..
-)	
+)
 
 ECHO FINISHED
