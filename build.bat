@@ -17,9 +17,6 @@ MD dist\
 RD /Q /S demos\
 MD demos\
 
-ECHO Copy BMP files in demos\ folder
-COPY *.bmp demos\
-
 ECHO Copy files in dist\ folder
 COPY *.bmp dist\
 COPY pdcurses34\curses.h dist\
@@ -53,6 +50,7 @@ CMD /C emcc -Oz %PDCURSES_BINARIES% -o dist\libcurses.o
 ECHO.
 ECHO BUILDING demos\
 ECHO ---------------
+COPY dist\*.bmp demos\
 FOR /R %%I IN (pdcurses34\demos\*.c) DO (
 	ECHO Building %%~nI%%~xI
 	IF "%%~nI" == "tuidemo" (
@@ -64,5 +62,6 @@ FOR /R %%I IN (pdcurses34\demos\*.c) DO (
 	CMD /C emcc -s ASYNCIFY=1 --emrun -O3 ..\dist\libcurses.o ..\out\%%~nI.bc -o %%~nI.html --use-preload-plugins --preload-file pdcfont.bmp --preload-file pdcicon.bmp --shell-file ../template.html
 	CD ..
 )
+DEL demos\*.bmp
 
 ECHO FINISHED
