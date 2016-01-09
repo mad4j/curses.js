@@ -24,4 +24,4 @@ Javascript porting of curses library using Emscripten
 * [PDCurses.js](https://github.com/coolwanglu/PDCurses.js)
 * [PDCurses](https://github.com/wmcbrine/PDCurses) now on GitHub!!!
 * [Emscripten](https://github.com/kripken/emscripten/wiki)
-* [EMCurses] https://github.com/rhaberkorn/emcurses
+* [EMCurses](https://github.com/rhaberkorn/emcurses)
