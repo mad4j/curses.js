@@ -61,7 +61,7 @@ FOR /R %%I IN (pdcurses34\demos\*.c) DO (
 		CMD /C emcc -Oz pdcurses34\demos\%%~nI%%~xI -o out\%%~nI.bc -I pdcurses34\ -I pdcurses34\pdcurses\ -I pdcurses34\sdl1\ -I pdcurses34\demos\
 	)
 	CD demos/
-	CMD /C emcc -s ASYNCIFY=1 --emrun -O3 ..\dist\libcurses.o ..\out\%%~nI.bc -o %%~nI.html --preload-file pdcfont.bmp --preload-file pdcicon.bmp --shell-file ../template.html
+	CMD /C emcc -s ASYNCIFY=1 --emrun -O3 ..\dist\libcurses.o ..\out\%%~nI.bc -o %%~nI.html --use-preload-plugins --preload-file pdcfont.bmp --preload-file pdcicon.bmp --shell-file ../template.html
 	CD ..
 )
 
