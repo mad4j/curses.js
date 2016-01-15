@@ -8,6 +8,7 @@ Javascript porting of curses library using Emscripten
 * [Nightly Build](https://github.com/mad4j/curses.js/tree/master/dist)
 
 ## Projects using Curses.js
+* [Rogue.JS](https://github.com/mad4j/rogue.js)
 * [Greed.js](https://github.com/mad4j/greed.js)
 
 ## Demos
