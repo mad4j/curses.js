@@ -8,6 +8,7 @@ Javascript porting of curses library using Emscripten
 * [Nightly Build](https://github.com/mad4j/curses.js/tree/master/dist)
 
 ## Projects using Curses.js
+* [Rogue.JS](https://github.com/mad4j/rogue.js)
 * [Greed.js](https://github.com/mad4j/greed.js)
 
 ## Demos
@@ -16,7 +17,7 @@ Javascript porting of curses library using Emscripten
 * [Rain](http://mad4j.github.io/curses.js/rain.html)
 * [Worm](http://mad4j.github.io/curses.js/worm.html)
 * [XMas](http://mad4j.github.io/curses.js/xmas.html)
-* [TUI](http://mad4j.github.io/curses.js/tui.html)
+* [TUIDemo](http://mad4j.github.io/curses.js/tuidemo.html)
 * [NewDemo](http://mad4j.github.io/curses.js/newdemo.html)
 * [NCColour](http://mad4j.github.io/curses.js/nccolour.html) written by Yoran Heling <projects@yorhel.nl>
 
