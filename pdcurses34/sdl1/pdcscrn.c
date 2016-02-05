@@ -105,10 +105,6 @@ int PDC_scr_open(int argc, char **argv)
 
 	SP->mono = !pdc_font->format->palette;
 	
-	/* emscripten support */
-	SP->mono = !( pdc_font->format->BitsPerPixel > 2);
-	
-	/* emscripten support */
 	pdc_font_indexes = (unsigned char*) malloc(pdc_font->w * pdc_font->h);
 	for (int i=0; i<pdc_font->w * pdc_font->h; i++) {
 		if (((unsigned int*)pdc_font->pixels)[i] == 0xFF000000) {
